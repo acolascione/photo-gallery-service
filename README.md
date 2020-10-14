@@ -27,15 +27,15 @@
 **Path Parameters:**
   * `id` user id\
 **Success Status Code:** `200`\
-**Returns:** JSON\
+**Returns:** JSON
 ```json
     {
-      "id": "Number",
       "name": "String",
-      "address": "String",
-      "phone": "String",
-      "website": "String",
-      "cost": "Number"
+      "avatar": "String",
+      "description": "String",
+      "date": "String",
+      "category": "String",
+      "url": "String"
     }
 ```
 

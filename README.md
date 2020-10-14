@@ -18,14 +18,8 @@
 **Returns:** JSON
 
 ```json
-    {"name": "String", "id": "Number", "photos": "[{
-      "id": "Number",
-      "name": "String",
-      "address": "String",
-      "phone": "String",
-      "website": "String",
-      "cost": "Number"
-    }]"}
+    {"name": "String", "id": "Number", "photos": "Array"
+    }
 ```
 
 ### Get all photos for a user
@@ -57,7 +51,7 @@
       "description": "String",
       "date": "String",
       "category": "String",
-      "url": String
+      "url": "String"
     }
 ```
 **Success Status Code:** `201`
@@ -86,7 +80,7 @@
       "description": "String",
       "date": "String",
       "category": "String",
-      "url": String
+      "url": "String"
     }
 ```
 **Success Status Code:** `200`

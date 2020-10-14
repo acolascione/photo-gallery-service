@@ -47,7 +47,7 @@ Response:
 Status Code: 200
 
 DELETE /api/restaurants/photo/:id  delete a photo
-Path Parameters: id (restaurant id)
+Path Parameters: id (photo_id)
 Resposne:
 Status Code: 200
 

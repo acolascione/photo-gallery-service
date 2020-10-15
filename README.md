@@ -18,8 +18,9 @@
 **Returns:** JSON
 
 ```json
-    {"name": "String", "id": "Number", "photos": "Array"
-    }
+    [{
+    "name": "String", "id": "Number", "photos": "Array"
+    }]
 ```
 
 ### Get all photos for a user
@@ -29,13 +30,13 @@
 **Success Status Code:** `200`\
 **Returns:** JSON
 ```json
-    {
+    [{
       "name": "String",
       "avatar": "String",
       "description": "String",
       "category": "String",
       "url": "String"
-    }
+    }]
 ```
 
 ### Add photo to a restaurant

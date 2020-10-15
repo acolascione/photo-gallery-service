@@ -46,7 +46,7 @@
  **Request Body**: Expects JSON with the following keys.
  ```json
     {
-      "name": "String",
+      "username": "String",
       "avatar": "String",
       "description": "String",
       "category": "String",
@@ -60,7 +60,9 @@
  **Request Body**: Expects JSON with the following keys.
  ```json
     {
-      "name": "String",
+      "username": "String",
+      "first_name": "String",
+      "last_name": "String",
       "avatar": "String"
     }
 ```
@@ -74,7 +76,7 @@
 
 ```json
     {
-      "name": "String",
+      "username": "String",
       "avatar": "String",
       "description": "String",
       "date": "String",
@@ -91,7 +93,9 @@
 
 ```json
     {
-      "name": "String",
+      "username": "String",
+      "first_name": "String",
+      "last_name": "String",
       "avatar": "String"
     }
 ```

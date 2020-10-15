@@ -11,43 +11,42 @@
 
 ### API
 ### Get all photos for a restaurant
- * GET `/api/restaurants/photos/:id`\
+ * GET `/api/restaurants/:id/photos`\
 **Path Parameters:**
   * `id` restaurant id\
 **Success Status Code:** `200`\
 **Returns:** JSON
 
 ```json
-    {"name": "String", "id": "Number", "photos": "Array"
-    }
+    [{
+    "name": "String", "id": "Number", "photos": "Array"
+    }]
 ```
 
 ### Get all photos for a user
- * GET `/api/users/photos/:id`\
+ * GET `/api/users/:id/photos`\
 **Path Parameters:**
   * `id` user id\
 **Success Status Code:** `200`\
 **Returns:** JSON
 ```json
-    {
+    [{
       "name": "String",
       "avatar": "String",
-      "description": "String",
       "date": "String",
+      "description": "String",
       "category": "String",
       "url": "String"
-    }
+    }]
 ```
 
 ### Add photo to a restaurant
- * POST `/api/restaurants/photos/:id`\
+ * POST `/api/restaurants/:id/photos`\
 **Path Parameters:**
   * `id` restaurant id\
  **Request Body**: Expects JSON with the following keys.
  ```json
     {
-      "name": "String",
-      "avatar": "String",
       "description": "String",
       "date": "String",
       "category": "String",
@@ -61,26 +60,25 @@
  **Request Body**: Expects JSON with the following keys.
  ```json
     {
-      "name": "String",
+      "username": "String",
+      "first_name": "String",
+      "last_name": "String",
       "avatar": "String"
     }
 ```
 **Success Status Code:** `201`
 
 ### Update a photo
- * PATCH `/api/restaurants/photo/:id`\
+ * PATCH `/api/restaurants/:id/photos/:id`\
 **Path Parameters:**
-  * `id` restaurant id\
+  * `id` restaurant id photo id \
   **Request Body**: Expects JSON with any of the following keys (include only keys to be updated)
 
 ```json
     {
-      "name": "String",
-      "avatar": "String",
       "description": "String",
       "date": "String",
-      "category": "String",
-      "url": "String"
+      "category": "String"
     }
 ```
 **Success Status Code:** `200`
@@ -91,17 +89,20 @@
 
 ```json
     {
-      "name": "String",
+      "username": "String",
+      "first_name": "String",
+      "last_name": "String",
       "avatar": "String"
     }
 ```
 **Success Status Code:** `200`
 
 ### Delete a photo
- * DELETE `/api/restaurants/photo/:id`\
+ * DELETE `/api/restaurants/:id/photos/:id`\
 **Path Parameters:**
-  * `id` photo id\
-**Success Status Code:** `200`
+  * `id` restaurant id photo id\
+**Success Status Code:** `204`
+
 
 
 ### Installing Dependencies

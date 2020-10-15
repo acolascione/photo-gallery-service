@@ -11,7 +11,7 @@
 
 ### API
 ### Get all photos for a restaurant
- * GET `/api/restaurants/photos/:id`\
+ * GET `/api/restaurants/:id/photos`\
 **Path Parameters:**
   * `id` restaurant id\
 **Success Status Code:** `200`\
@@ -23,7 +23,7 @@
 ```
 
 ### Get all photos for a user
- * GET `/api/users/photos/:id`\
+ * GET `/api/users/:id/photos`\
 **Path Parameters:**
   * `id` user id\
 **Success Status Code:** `200`\
@@ -33,14 +33,13 @@
       "name": "String",
       "avatar": "String",
       "description": "String",
-      "date": "String",
       "category": "String",
       "url": "String"
     }
 ```
 
 ### Add photo to a restaurant
- * POST `/api/restaurants/photos/:id`\
+ * POST `/api/restaurants/:id/photos`\
 **Path Parameters:**
   * `id` restaurant id\
  **Request Body**: Expects JSON with the following keys.
@@ -49,7 +48,6 @@
       "name": "String",
       "avatar": "String",
       "description": "String",
-      "date": "String",
       "category": "String",
       "url": "String"
     }
@@ -68,9 +66,9 @@
 **Success Status Code:** `201`
 
 ### Update a photo
- * PATCH `/api/restaurants/photo/:id`\
+ * PATCH `/api/photos/:id`\
 **Path Parameters:**
-  * `id` restaurant id\
+  * `id` photo id\
   **Request Body**: Expects JSON with any of the following keys (include only keys to be updated)
 
 ```json
@@ -80,7 +78,8 @@
       "description": "String",
       "date": "String",
       "category": "String",
-      "url": "String"
+      "url": "String",
+      "restaurant_id": "Number"
     }
 ```
 **Success Status Code:** `200`
@@ -97,11 +96,11 @@
 ```
 **Success Status Code:** `200`
 
-### Delete a photo
- * DELETE `/api/restaurants/photo/:id`\
+### Delete a photo 
+ * DELETE `/api/photos/:id`\
 **Path Parameters:**
   * `id` photo id\
-**Success Status Code:** `200`
+**Success Status Code:** `204`
 
 
 ### Installing Dependencies

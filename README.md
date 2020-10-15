@@ -46,9 +46,8 @@
  **Request Body**: Expects JSON with the following keys.
  ```json
     {
-      "username": "String",
-      "avatar": "String",
       "description": "String",
+      "date": "String",
       "category": "String",
       "url": "String"
     }
@@ -69,20 +68,16 @@
 **Success Status Code:** `201`
 
 ### Update a photo
- * PATCH `/api/photos/:id`\
+ * PATCH `/api/restaurants/:id/photos/:id`\
 **Path Parameters:**
-  * `id` photo id\
+  * `id` restaurant id photo id \
   **Request Body**: Expects JSON with any of the following keys (include only keys to be updated)
 
 ```json
     {
-      "username": "String",
-      "avatar": "String",
       "description": "String",
       "date": "String",
-      "category": "String",
-      "url": "String",
-      "restaurant_id": "Number"
+      "category": "String"
     }
 ```
 **Success Status Code:** `200`
@@ -102,9 +97,9 @@
 **Success Status Code:** `200`
 
 ### Delete a photo 
- * DELETE `/api/photos/:id`\
+ * DELETE `/api/restaurants/:id/photos/:id`\
 **Path Parameters:**
-  * `id` photo id\
+  * `id` restaurant id photo id\
 **Success Status Code:** `204`
 
 

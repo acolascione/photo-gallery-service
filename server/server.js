@@ -21,7 +21,7 @@ app.get('/api/restaurants/', (req, res) => {
       res.status(200).send(response);
     })
     .catch((err) => {
-      console.log(err);
+      res.status(400).send(err);
     });
 });
 
@@ -34,9 +34,19 @@ app.get('/api/restaurants/photos/:id', (req, res) => {
       res.status(200).send(result);
     })
     .catch((err) => {
-      console.log(err);
+      res.status(400).send(err);
     });
 });
+
+// app.post('/api/restaurants/photos', (req, res) => {
+//   db.addPhoto()
+//     .then((response) => {
+//       res.status(201).send();
+//     })
+//     .catch((err) => {
+//       res.status(400).send(err);
+//     });
+// });
 
 app.listen(port, () => {
   console.log(`Photos-Gallery App Listening on Port http://localhost:${port}`);

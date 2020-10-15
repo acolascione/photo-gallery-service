@@ -10,51 +10,98 @@
 
 
 ### API
-GET /api/restaurants/photos/:id   get all photos for a restaurant
-Path Parameters: id (restaurant id)
-Response:
-Status Code: 200
-Type: JSON
-example: [{name: String, id: Number, photos: [ {photo_id: Number, description: String, date: Date, category: String, url: String, avatar: String, and user_id: Number} ]}]
+### Get all photos for a restaurant
+ * GET `/api/restaurants/photos/:id`\
+**Path Parameters:**
+  * `id` restaurant id\
+**Success Status Code:** `200`\
+**Returns:** JSON
 
-GET /api/users/photos/:id  get all photos for user
-Path Parameters: id (user_id)
-Response:
-Status Code: 200
-Type: JSON
-example:  [{photo_id: Number, description: String, date: Date, category: String, url: String, avatar: String, and user_id: Number}]
+```json
+    {"name": "String", "id": "Number", "photos": "Array"
+    }
+```
 
+### Get all photos for a user
+ * GET `/api/users/photos/:id`\
+**Path Parameters:**
+  * `id` user id\
+**Success Status Code:** `200`\
+**Returns:** JSON
+```json
+    {
+      "name": "String",
+      "avatar": "String",
+      "description": "String",
+      "date": "String",
+      "category": "String",
+      "url": "String"
+    }
+```
 
-POST /api/restaurants/photos/:id   add a photo to a restaurant
-Path Parameters: id (restaurant id)
-Response:
-Status Code: 201
+### Add photo to a restaurant
+ * POST `/api/restaurants/photos/:id`\
+**Path Parameters:**
+  * `id` restaurant id\
+ **Request Body**: Expects JSON with the following keys.
+ ```json
+    {
+      "name": "String",
+      "avatar": "String",
+      "description": "String",
+      "date": "String",
+      "category": "String",
+      "url": "String"
+    }
+```
+**Success Status Code:** `201`
 
-POST /api/users  add a user
-Request body: {user_name: 'test', avatar: ''}
-Response:
-Status Code: 201
+### Add a user
+ * POST `/api/users`\
+ **Request Body**: Expects JSON with the following keys.
+ ```json
+    {
+      "name": "String",
+      "avatar": "String"
+    }
+```
+**Success Status Code:** `201`
 
-PATCH /api/restaurants/photo/:id  update a photo
-Path Parameters: id (restaurant id)
-Request body: {description: String and/or category: String}
-Response:
-Status Code: 200
+### Update a photo
+ * PATCH `/api/restaurants/photo/:id`\
+**Path Parameters:**
+  * `id` restaurant id\
+  **Request Body**: Expects JSON with any of the following keys (include only keys to be updated)
 
-PATCH /api/users/:user_id  update a user info
-Request body: {user_name: 'test' and/or avatar: ''}
-Response:
-Status Code: 200
+```json
+    {
+      "name": "String",
+      "avatar": "String",
+      "description": "String",
+      "date": "String",
+      "category": "String",
+      "url": "String"
+    }
+```
+**Success Status Code:** `200`
 
-DELETE /api/restaurants/photo/:id  delete a photo
-Path Parameters: id (restaurant id)
-Resposne:
-Status Code: 200
+### Update a user's info
+ * PATCH `/api/users/:id`\
+ **Request Body**: Expects JSON with any of the following keys (include only keys to be updated)
 
-DELETE /api/users/:id  delete a user
-Path Parameters: id (user_id)
-Resposne:
-Status Code: 200
+```json
+    {
+      "name": "String",
+      "avatar": "String"
+    }
+```
+**Success Status Code:** `200`
+
+### Delete a photo
+ * DELETE `/api/restaurants/photo/:id`\
+**Path Parameters:**
+  * `id` photo id\
+**Success Status Code:** `200`
 
 
 ### Installing Dependencies

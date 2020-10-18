@@ -8,7 +8,7 @@ const writer = csvWriter();
 
 const createUsers = () => new Promise((resolve) => {
   writer.pipe(fs.createWriteStream('cass_users.csv'));
-  for (let i = 0; i < 100000; i += 1) {
+  for (let i = 0; i < 10000; i += 1) {
     if (i === 500 || i === 1000 || i === 5000 || i === 7500) {
       console.log(`Seeded ${i} Records`);
     }

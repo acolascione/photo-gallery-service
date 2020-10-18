@@ -26,3 +26,9 @@ dist/
 
 # aws access keys file
 aws-credentials.json
+config.json
+user_data.csv
+photo_data.csv
+restaurant_data.csv
+pg_config.json
+*.csv

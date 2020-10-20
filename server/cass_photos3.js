@@ -13,8 +13,8 @@ const categories = ['Food', 'Drink', 'Interior', 'Exterior', 'Atmosphere'];
 
 const createPhoto = () => new Promise((resolve) => {
   writer.pipe(fs.createWriteStream('cass_photos3.csv'));
-  for (let i = 0; i < 4000000; i += 1) {
-    if (i === 50000 || i === 100000 || i === 1000000 || i === 2000000 || i === 4000000) {
+  for (let i = 8000001; i < 12000000; i += 1) {
+    if (i === 9000000 || i === 10000000 || i === 11000000) {
       console.log(`Seeded ${i} Records`);
     }
     writer.write({

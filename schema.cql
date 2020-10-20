@@ -18,7 +18,7 @@ CREATE TABLE photo (
     date timestamp,
     category text,
     url text,
-    PRIMARY KEY ((restaurant_id, id), date, user_id)
+    PRIMARY KEY ((restaurant_id), date, user_id)
 
 )
 WITH CLUSTERING ORDER BY (date DESC);

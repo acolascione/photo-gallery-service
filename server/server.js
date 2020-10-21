@@ -23,7 +23,6 @@ app.get('/api/restaurants/:id/photos', (req, res) => {
     if (err) {
       res.status(400).send(err);
     } else {
-      console.log('success!');
       res.status(200).send(result);
     }
   });
@@ -39,7 +38,6 @@ app.post('/api/restaurants/:id/photos', (req, res) => {
     if (err) {
       res.status(400).send(err);
     } else {
-      console.log('success!');
       res.status(201).send();
     }
   });

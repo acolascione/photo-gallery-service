@@ -15,7 +15,7 @@ connection.connect((err) => {
 
 const gatherPhotos = (id, callback) => {
   console.log('in query', id);
-  const queryStr = 'SELECT * FROM photo WHERE restaurant_id=$1';
+  const queryStr = 'SELECT photo.*, restaurant.name FROM photo JOIN restaurant ON photo.restaurant_id = restaurant.id WHERE restaurant.id=$1';
   connection.query(queryStr, [id], callback);
 };
 

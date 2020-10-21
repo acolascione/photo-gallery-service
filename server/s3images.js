@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const AWS = require('aws-sdk');
+const fs = require('fs');
 
 AWS.config.loadFromPath('./config.json');
 
@@ -31,7 +32,8 @@ function listAllKeys(s3bucket, start, end) {
           break;
         }
       }
-      // console.log(list);
+      const list2 = JSON.stringify(list);
+      fs.writeFileSync('/Users/alissacolascione/hrsf130/photo-gallery-service/server/photos3.json', list2);
     }
   });
 }

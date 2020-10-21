@@ -1,31 +1,31 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
-/* eslint-disable arrow-body-style */
+/* eslint-disable camelcase */
 /* eslint-disable no-console */
-const mongoose = require('mongoose');
+const { Client } = require('pg');
+const config = require('../server/pg_config.json');
 
-mongoose.connect('mongodb://localhost:27017/photo-gallery');
+const connection = new Client(config);
 
-const db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-  console.log('Successful connection to MongoDB!');
+connection.connect((err) => {
+  if (err) {
+    console.log('Could not connect to postgres: ', err);
+    return;
+  }
+  console.log('Connected to Postgres');
 });
 
-const RestaurantSchema = mongoose.Schema({
-  name: String,
-  id: Number,
-  photos: [Object],
-}, { versionKey: false });
+const gatherPhotos = (id, callback) => {
+  console.log('in query', id);
+  const queryStr = 'SELECT * FROM photo WHERE restaurant_id=$1';
+  connection.query(queryStr, [id], callback);
+};
 
-const RestaurantModel = mongoose.model('Restaurant', RestaurantSchema);
-
-const gatherPhotos = (restaurantId) => {
-  return RestaurantModel.find({ id: restaurantId }).exec();
+const addPhoto = (id, user_id, description, date, category, url, callback) => {
+  console.log('in query');
+  const queryStr = 'INSERT INTO photo (user_id, description, date, restaurant_id, category, url) values($1, $2, $3, $4, $5, $6)';
+  connection.query(queryStr, [user_id, description, date, id, category, url], callback);
 };
 
 module.exports = {
-  RestaurantModel,
   gatherPhotos,
+  addPhoto,
 };

@@ -33,10 +33,12 @@ CREATE TABLE user (
 );
 
 
-COPY photo (id, restaurant_id, restaurant_name, user_id, username, first_name, last_name, avatar, description, date, category, url) FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/cass_photos.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+COPY photo (id, restaurant_id, restaurant_name, user_id, username, first_name, last_name, avatar, description, date, category, url) FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/Cassandra/cass_photos.csv' WITH DELIMITER=',' AND HEADER=TRUE;
 
-COPY photo (id, restaurant_id, restaurant_name, user_id, username, first_name, last_name, avatar, description, date, category, url) FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/cass_photos2.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+COPY photo (id, restaurant_id, restaurant_name, user_id, username, first_name, last_name, avatar, description, date, category, url) FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/Cassandra/cass_photos2.csv' WITH DELIMITER=',' AND HEADER=TRUE;
 
-COPY photo (id, restaurant_id, restaurant_name, user_id, username, first_name, last_name, avatar, description, date, category, url) FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/cass_photos3.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+COPY photo (id, restaurant_id, restaurant_name, user_id, username, first_name, last_name, avatar, description, date, category, url) FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/Cassandra/cass_photos3.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+
+COPY photo (id, restaurant_id, restaurant_name, user_id, username, first_name, last_name, avatar, description, date, category, url) FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/Cassandra/cass_photos4.csv' WITH DELIMITER=',' AND HEADER=TRUE;
 
 COPY user (user_id, username, first_name, last_name, avatar) FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/cass_users.csv' WITH DELIMITER=',' AND HEADER=TRUE;

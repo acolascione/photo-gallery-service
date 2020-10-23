@@ -8,6 +8,8 @@ const writer = csvWriter();
 
 const categories = ['Food', 'Drink', 'Interior', 'Exterior', 'Atmosphere'];
 
+const randomNum = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
 // const outer = async () => {
 const createPhoto = () => new Promise((resolve) => {
   writer.pipe(fs.createWriteStream('photo_data3.csv'));
@@ -16,10 +18,10 @@ const createPhoto = () => new Promise((resolve) => {
       console.log(`Seeded ${i} Records`);
     }
     writer.write({
-      user_id: faker.random.number({ min: 1, max: 10000 }),
+      user_id: randomNum(1, 10000),
       description: faker.lorem.sentence(),
       date: faker.date.between('2020-08-01', '2020-10-1').toISOString(),
-      restaurant_id: faker.random.number({ min: 1, max: 1000000 }),
+      restaurant_id: randomNum(1, 7000000),
       category: faker.random.arrayElement(categories),
       url: faker.random.arrayElement(photos),
     });

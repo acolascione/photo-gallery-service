@@ -14,7 +14,7 @@ const createUsers = () => new Promise((resolve) => {
     }
     writer.write({
       user_id: i + 1,
-      username: faker.internet.userName(),
+      username: faker.name.firstName(),
       first_name: faker.name.firstName(),
       last_name: faker.name.lastName(),
       avatar: faker.random.arrayElement(images),

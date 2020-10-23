@@ -19,7 +19,7 @@ const createPhoto = () => new Promise((resolve) => {
     }
     writer.write({
       id: i + 1,
-      restaurant_id: faker.random.number({ min: 1, max: 1000000 }),
+      restaurant_id: faker.random.number({ min: 1, max: 8000000 }),
       restaurant_name: faker.company.companyName(),
       user_id: faker.random.number({ min: 1, max: 10000 }),
       username: faker.internet.userName(),

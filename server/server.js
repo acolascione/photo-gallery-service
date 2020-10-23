@@ -18,7 +18,6 @@ app.use('/', express.static(path.join(__dirname, '/../client/dist')));
 
 app.get('/api/restaurants/:id/photos', (req, res) => {
   const { id } = req.params;
-  console.log('id: ', id);
   gatherPhotos(id, (err, result) => {
     if (err) {
       res.status(400).send(err);
@@ -33,7 +32,6 @@ app.post('/api/restaurants/:id/photos', (req, res) => {
   const {
     user_id, description, date, category, url,
   } = req.body;
-  console.log('id: ', id);
   addPhoto(id, user_id, description, date, category, url, (err) => {
     if (err) {
       res.status(400).send(err);

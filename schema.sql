@@ -31,6 +31,8 @@ FOREIGN KEY (restaurant_id) REFERENCES restaurant(id)
 
 COPY restaurant (name) FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/restaurant_data.csv' DELIMITERS ',' CSV header;
 
+COPY restaurant (name) FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/restaurant_data2.csv' DELIMITERS ',' CSV header;
+
 COPY users (id, username, first_name, last_name, avatar) FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/user_data.csv' DELIMITERS ',' CSV header;
 
 COPY photo (user_id, description, date, restaurant_id, category, url)  FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/photo_data.csv' DELIMITERS ',' CSV header;
@@ -38,3 +40,9 @@ COPY photo (user_id, description, date, restaurant_id, category, url)  FROM '/Us
 COPY photo (user_id, description, date, restaurant_id, category, url)  FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/photo_data2.csv' DELIMITERS ',' CSV header;
 
 COPY photo (user_id, description, date, restaurant_id, category, url)  FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/photo_data3.csv' DELIMITERS ',' CSV header;
+
+COPY photo (user_id, description, date, restaurant_id, category, url)  FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/photo_data4.csv' DELIMITERS ',' CSV header;
+
+COPY photo (user_id, description, date, restaurant_id, category, url)  FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/photo_data5.csv' DELIMITERS ',' CSV header;
+
+COPY photo (user_id, description, date, restaurant_id, category, url)  FROM '/Users/alissacolascione/hrsf130/photo-gallery-service/server/photosCsv.csv' DELIMITERS ',' CSV header;

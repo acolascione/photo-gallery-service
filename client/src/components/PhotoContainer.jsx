@@ -123,10 +123,10 @@ const PhotoContainer = ({ photos, handleClick }) => {
           <Image onClick={handleClick} src={`${photos[6].url}`}></Image>
         </PhotoSeven>
         <PhotoEight>
-          <Image onClick={handleClick} src={`${photos[7].url}`}></Image>
+          <Image onClick={handleClick} src={`${photos[0].url}`}></Image>
         </PhotoEight>
         <PhotoNine>
-          <LastImage onClick={handleClick} src={`${photos[8].url}`}></LastImage>
+          <LastImage onClick={handleClick} src={`${photos[4].url}`}></LastImage>
           <MorePhotosText onClick={handleClick}>+31 more</MorePhotosText>
         </PhotoNine>
       </InnerGrid>

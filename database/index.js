@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-console */
-//const { Client } = require('pg');
+// const { Client } = require('pg');
 const { Pool } = require('pg');
 const config = require('../server/pg_config.json');
 

@@ -118,7 +118,7 @@ const PhotoModal = ({ showModal, toggleModal, photos }) => {
           <LeftScroll type="button" aria-label="Previous Image"></LeftScroll>
           <ScrollerContainer>
             <ImageContainer>
-              <Image src={photos[0].url_path}></Image>
+              <Image src={photos[3].url}></Image>
             </ImageContainer>
             <DescriptionFooter>
               <div>

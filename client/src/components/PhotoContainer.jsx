@@ -101,32 +101,32 @@ const PhotoContainer = ({ photos, handleClick }) => {
   return (
     <PhotoGrid>
       <PhotoOne>
-        <Image onClick={handleClick} src={`${photos[0].url_path}`}></Image>
+        <Image onClick={handleClick} src={`${photos[0].url}`}></Image>
       </PhotoOne>
       <PhotoTwo>
-        <Image onClick={handleClick} src={`${photos[1].url_path}`}></Image>
+        <Image onClick={handleClick} src={`${photos[1].url}`}></Image>
       </PhotoTwo>
       <PhotoThree>
-        <Image onClick={handleClick} src={`${photos[2].url_path}`}></Image>
+        <Image onClick={handleClick} src={`${photos[2].url}`}></Image>
       </PhotoThree>
       <InnerGrid>
         <PhotoFour>
-          <Image onClick={handleClick} src={`${photos[3].url_path}`}></Image>
+          <Image onClick={handleClick} src={`${photos[3].url}`}></Image>
         </PhotoFour>
         <PhotoFive>
-          <Image onClick={handleClick} src={`${photos[4].url_path}`}></Image>
+          <Image onClick={handleClick} src={`${photos[4].url}`}></Image>
         </PhotoFive>
         <PhotoSix>
-          <Image onClick={handleClick} src={`${photos[5].url_path}`}></Image>
+          <Image onClick={handleClick} src={`${photos[5].url}`}></Image>
         </PhotoSix>
         <PhotoSeven>
-          <Image onClick={handleClick} src={`${photos[6].url_path}`}></Image>
+          <Image onClick={handleClick} src={`${photos[6].url}`}></Image>
         </PhotoSeven>
         <PhotoEight>
-          <Image onClick={handleClick} src={`${photos[7].url_path}`}></Image>
+          <Image onClick={handleClick} src={`${photos[0].url}`}></Image>
         </PhotoEight>
         <PhotoNine>
-          <LastImage onClick={handleClick} src={`${photos[8].url_path}`}></LastImage>
+          <LastImage onClick={handleClick} src={`${photos[4].url}`}></LastImage>
           <MorePhotosText onClick={handleClick}>+31 more</MorePhotosText>
         </PhotoNine>
       </InnerGrid>

@@ -33,7 +33,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       restaurant_name: '',
-      restaurant_id: Math.floor(Math.random() * 100),
+      restaurant_id: 62,
       photos: [],
       ableToRender: false,
       showModal: false,
@@ -48,12 +48,13 @@ class App extends React.Component {
   }
 
   getRestaurantsPhotos() {
-    axios.get(`api/restaurants/photos/${this.state.restaurant_id}`, {
+    axios.get(`api/restaurants/${this.state.restaurant_id}/photos`, {
       params: {
         restaurant_id: this.state.restaurant_id,
       },
     })
       .then((response) => {
+        const photos = response.data.rows.map((photo) => photo);
         let id;
         if (window.location.href.split('/')[3] === '') {
           id = 1;
@@ -62,9 +63,9 @@ class App extends React.Component {
         }
         this.setState({
           ableToRender: true,
-          restaurant_name: response.data[0].name,
+          restaurant_name: response.data.rows[0].name,
           restaurant_id: id,
-          photos: response.data[0].photos,
+          photos,
         });
       })
       .catch((err) => {

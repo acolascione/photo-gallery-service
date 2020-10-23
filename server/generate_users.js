@@ -2,7 +2,7 @@
 const faker = require('faker');
 const fs = require('fs');
 const csvWriter = require('csv-write-stream');
-const connection = require('./index.js');
+const connection = require('../database/index.js');
 const { images } = require('./images.js');
 
 const writer = csvWriter();

@@ -1,0 +1,22 @@
+config:
+  target: "http://localhost:3004"
+  phases:
+    - duration: 60
+      arrivalRate: 200
+      name: warm up
+    - duration: 120
+      arrivalRate: 500
+      rampTo: 750
+      name: ramp up
+    - duration: 60
+      arrivalRate: 250
+      name: Sustained load
+scenarios:
+# We define one scenario:
+  - name: "get photos"
+    flow:
+      # Get the details of the product:
+      - get:
+          url: "/api/restaurants/6500901/photos"
+
+

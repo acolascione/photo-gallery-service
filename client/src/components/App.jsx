@@ -33,7 +33,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       restaurant_name: '',
-      restaurant_id: 62,
+      restaurant_id: Math.floor(Math.random() * 100),
       photos: [],
       ableToRender: false,
       showModal: false,

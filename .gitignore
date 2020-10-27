@@ -32,3 +32,6 @@ photo_data.csv
 restaurant_data.csv
 pg_config.json
 *.csv
+newrelic.jscoverage
+newrelic.js
+newrelic_agent.log

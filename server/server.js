@@ -1,9 +1,11 @@
 /* eslint-disable camelcase */
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-console */
+require('newrelic');
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const compression = require('compression');
 const { gatherPhotos, addPhoto } = require('../database/index.js');
 
 const app = express();
@@ -13,6 +15,8 @@ const port = 3004;
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
+
+app.use(compression());
 
 app.use('/', express.static(path.join(__dirname, '/../client/dist')));
 
